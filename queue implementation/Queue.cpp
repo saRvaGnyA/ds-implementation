@@ -20,7 +20,8 @@ bool Queue::is_empty() {
 }
 
 bool Queue::is_full() {
-	if (front == 0 && rear == (size - 1))
+	//if (front == 0 && rear == (size - 1)) - this is wrong as a queue is FIFO/LILO
+	if(rear == (size-1))
 		return true;
 	else
 		return false;
@@ -66,11 +67,23 @@ int Queue::deq() {
 		rear = front = -1;
 		return temp;
 	}
+	/*
+	* 
 	else {
 		int temp;
 		temp = q[rear];
 		q[rear] = 0;
 		rear--;
+		return temp;
+	}
+	*
+	* Flawed logic - a queue is FIFO/LILO
+	*/
+	else {
+		int temp;
+		temp = q[front];
+		q[front] = 0;
+		front++;
 		return temp;
 	}
 }
