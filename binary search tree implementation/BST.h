@@ -8,7 +8,9 @@ class BST {
 public:
     Node *root;
 
-    bool isEmpty();
+    bool isEmpty() const;
+
+    void insert(Node *);
 };
 
 
