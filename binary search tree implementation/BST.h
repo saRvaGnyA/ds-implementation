@@ -8,9 +8,17 @@ class BST {
 public:
     Node *root;
 
+    BST();
+
     bool isEmpty() const;
 
     void insert(Node *);
+
+    void preorder(Node *) const;
+
+    void inorder(Node *) const;
+
+    void postorder(Node *) const;
 };
 
 

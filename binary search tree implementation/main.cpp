@@ -17,6 +17,7 @@ int main() {
         cout << "5. Height of Tree" << endl;
         cout << "6. Clear Screen" << endl;
         cout << "7. Is the tree empty" << endl;
+        cout << "8. DFS traversals" << endl;
         cout << "0. Exit Program" << endl;
         cin >> option;
         Node *node = new Node;
@@ -61,6 +62,31 @@ int main() {
                     cout << "Tree is empty" << endl;
                 else
                     cout << "Tree is not empty" << endl;
+                break;
+            }
+            case 8: {
+                // DFS traversals operation
+                cout << "1. Preorder" << endl;
+                cout << "2. Inorder" << endl;
+                cout << "3. Postorder" << endl;
+                int a;
+                cin >> a;
+                switch (a) {
+                    case 1:
+                        tree.preorder(tree.root);
+                        cout << endl;
+                        break;
+                    case 2:
+                        tree.inorder(tree.root);
+                        cout << endl;
+                        break;
+                    case 3:
+                        tree.postorder(tree.root);
+                        cout << endl;
+                        break;
+                    default:
+                        cout << "Invalid choice" << endl;
+                }
                 break;
             }
             default:
