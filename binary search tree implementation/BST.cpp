@@ -2,6 +2,8 @@
 #include "BST.h"
 #include <iostream>
 
+#define SPACE 10
+
 using namespace std;
 
 BST::BST() : root{nullptr} {
@@ -13,6 +15,18 @@ bool BST::isEmpty() const {
         return true;
     else
         return false;
+}
+
+void BST::print(Node *n, int space) {
+    if (n == nullptr)
+        return;
+    space += SPACE;
+    print(n->right, space);
+    cout << endl;
+    for (int i{}; i < space - SPACE; ++i)
+        cout << " ";
+    cout << n->val << endl;
+    print(n->left, space);
 }
 
 void BST::insert(Node *new_node) {

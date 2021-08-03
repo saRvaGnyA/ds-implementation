@@ -2,6 +2,7 @@
 #include "Node.h"
 #include "BST.h"
 
+#define SPACE 10
 using namespace std;
 
 int main() {
@@ -45,6 +46,8 @@ int main() {
             }
             case 4: {
                 // print and traverse operation
+                tree.print(tree.root, SPACE);
+                cout << endl;
                 break;
             }
             case 5: {

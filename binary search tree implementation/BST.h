@@ -12,6 +12,8 @@ public:
 
     bool isEmpty() const;
 
+    void print(Node *, int);
+
     void insert(Node *);
 
     void preorder(Node *) const;
