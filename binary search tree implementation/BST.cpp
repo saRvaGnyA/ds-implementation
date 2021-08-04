@@ -29,6 +29,29 @@ void BST::print(Node *n, int space) {
     print(n->left, space);
 }
 
+Node *BST::search(Node *n, int v) {
+    if (n == nullptr || n->val == v)
+        return n;
+    else if (n->val > v)
+        return search(n->left, v);
+    else
+        return search(n->right, v);
+}
+
+//Iterative search
+//Node *BST::search(int v) {
+//    Node *t = root;
+//    while (t != nullptr) {
+//        if (t->val == v)
+//            break;
+//        else if (t->val > v)
+//            t = t->left;
+//        else
+//            t = t->right;
+//    }
+//    return t;
+//}
+
 void BST::insert(Node *new_node) {
     if (root == nullptr) {
         root = new_node;

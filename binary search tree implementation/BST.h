@@ -12,6 +12,8 @@ public:
 
     bool isEmpty() const;
 
+    Node *search(Node *, int);
+
     void print(Node *, int);
 
     void insert(Node *);

@@ -38,6 +38,14 @@ int main() {
             }
             case 2: {
                 // search operation
+                int v;
+                cout << "Enter data to search: ";
+                cin >> v;
+                Node *t{tree.search(tree.root, v)};
+                if (t == nullptr)
+                    cout << "Node not found" << endl;
+                else
+                    cout << "Node found at memory location " << t << endl;
                 break;
             }
             case 3: {
