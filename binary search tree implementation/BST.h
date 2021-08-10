@@ -23,6 +23,8 @@ public:
     void inorder(Node *) const;
 
     void postorder(Node *) const;
+
+    int height(Node *);
 };
 
 

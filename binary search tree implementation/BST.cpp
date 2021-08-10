@@ -102,3 +102,16 @@ void BST::postorder(Node *n) const {  // LRN
     postorder(n->right);
     cout << n->val << " ";
 }
+
+int BST::height(Node *n) {
+    if (n == nullptr)
+        return -1;
+    else {
+        int left_height = height(n->left);
+        int right_height = height(n->right);
+        if (left_height > right_height)
+            return left_height + 1;
+        else
+            return right_height + 1;
+    }
+}

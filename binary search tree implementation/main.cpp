@@ -60,6 +60,7 @@ int main() {
             }
             case 5: {
                 // height of tree operation
+                cout << "Height of the binary tree is: " << tree.height(tree.root) << endl;
                 break;
             }
             case 6: {
