@@ -25,6 +25,10 @@ public:
     void postorder(Node *) const;
 
     int height(Node *);
+
+    void printLevelOrderBFS(Node *);
+
+    void printGivenLevelBFS(Node *, int);
 };
 
 

@@ -19,6 +19,7 @@ int main() {
         cout << "6. Clear Screen" << endl;
         cout << "7. Is the tree empty" << endl;
         cout << "8. DFS traversals" << endl;
+        cout << "9. BFS traversals" << endl;
         cout << "0. Exit Program" << endl;
         cin >> option;
         Node *node = new Node;
@@ -53,7 +54,7 @@ int main() {
                 break;
             }
             case 4: {
-                // print and traverse operation
+                // print and traverse operation graphically
                 tree.print(tree.root, SPACE);
                 cout << endl;
                 break;
@@ -99,6 +100,12 @@ int main() {
                     default:
                         cout << "Invalid choice" << endl;
                 }
+                break;
+            }
+            case 9: {
+                // BFS traversals operation
+                tree.printLevelOrderBFS(tree.root);
+                cout << endl;
                 break;
             }
             default:

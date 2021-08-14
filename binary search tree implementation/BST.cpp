@@ -115,3 +115,20 @@ int BST::height(Node *n) {
             return right_height + 1;
     }
 }
+
+void BST::printLevelOrderBFS(Node *n) {
+    int h = height(n);
+    for (int i{}; i <= h; ++i)
+        printGivenLevelBFS(n, i);
+}
+
+void BST::printGivenLevelBFS(Node *n, int level) {
+    if (n == nullptr)
+        return;
+    else if (level == 0)
+        cout << n->val << "\t";
+    else {
+        printGivenLevelBFS(n->left, level - 1);
+        printGivenLevelBFS(n->right, level - 1);
+    }
+}
