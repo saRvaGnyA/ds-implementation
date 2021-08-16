@@ -29,6 +29,10 @@ public:
     void printLevelOrderBFS(Node *);
 
     void printGivenLevelBFS(Node *, int);
+
+    static Node *nMin(Node *);
+
+    Node *deleteNode(Node *, int);
 };
 
 

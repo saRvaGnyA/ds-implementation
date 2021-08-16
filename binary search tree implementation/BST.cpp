@@ -132,3 +132,35 @@ void BST::printGivenLevelBFS(Node *n, int level) {
         printGivenLevelBFS(n->right, level - 1);
     }
 }
+
+Node *BST::nMin(Node *n) {
+    Node *temp = n;
+    while (temp->left != nullptr)
+        temp = temp->left;
+    return temp;
+}
+
+Node *BST::deleteNode(Node *n, int v) {
+    if (n == nullptr)
+        return n;
+    else if (v < n->val)
+        n->left = deleteNode(n->left, v);
+    else if (v > n->val)
+        n->right = deleteNode(n->right, v);
+    else {
+        if (n->left == nullptr) {
+            Node *temp = n->right;
+            delete n;
+            return temp;
+        } else if (n->right == nullptr) {
+            Node *temp = n->left;
+            delete n;
+            return temp;
+        } else {
+            Node *temp = nMin(n->right);
+            n->val = temp->val;
+            n->right = deleteNode(n->right, temp->val);
+        }
+    }
+    return n;
+}
