@@ -34,7 +34,8 @@ int main() {
                 int v;
                 cin >> v;
                 node->val = v;
-                tree.insert(node);
+//                tree.insert(node);
+                tree.root = tree.insertRecursive(tree.root, node);
                 break;
             }
             case 2: {

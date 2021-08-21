@@ -18,6 +18,8 @@ public:
 
     void insert(Node *);
 
+    Node *insertRecursive(Node *, Node *);
+
     void preorder(Node *) const;
 
     void inorder(Node *) const;

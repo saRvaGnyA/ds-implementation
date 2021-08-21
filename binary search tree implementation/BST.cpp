@@ -79,6 +79,22 @@ void BST::insert(Node *new_node) {
     }
 }
 
+Node *BST::insertRecursive(Node *r, Node *n) {
+    if (r == nullptr) {
+        r = n;
+        return r;
+    } else if (n->val < r->val) {
+        r->left = insertRecursive(r->left, n);
+    } else if (n->val > r->val) {
+        r->right = insertRecursive(r->right, n);
+    } else {
+        cout << "Duplicates not allowed" << endl;
+        return r;
+    }
+    return r;
+}
+
+
 void BST::preorder(Node *n) const {  // NLR
     if (n == nullptr)
         return;
