@@ -56,7 +56,7 @@ int main() {
                 cout << "Enter the value of the node in BST to be deleted: ";
                 cin >> v;
                 Node *temp = tree.search(tree.root, v);
-                if (temp == nullptr) {
+                if (temp != nullptr) {
                     tree.deleteNode(tree.root, v);
                     cout << "Node deleted" << endl;
                 } else {
