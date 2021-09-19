@@ -111,3 +111,51 @@ Node *AVL::rightR(Node *y) {
     y->left = temp;
     return x;
 }
+
+Node *AVL::nMin(Node *n) {
+    Node *temp = n;
+    while (temp->left != nullptr)
+        temp = temp->left;
+    return temp;
+}
+
+Node *AVL::deleteNode(Node *n, int v) {
+    if (n == nullptr)
+        return n;
+    else if (v < n->val)
+        n->left = deleteNode(n->left, v);
+    else if (v > n->val)
+        n->right = deleteNode(n->right, v);
+    else {
+        if (n->left == nullptr) {
+            Node *temp = n->right;
+            delete n;
+            return temp;
+        } else if (n->right == nullptr) {
+            Node *temp = n->left;
+            delete n;
+            return temp;
+        } else {
+            Node *temp = nMin(n->right);
+            n->val = temp->val;
+            n->right = deleteNode(n->right, temp->val);
+        }
+    }
+    int bf = balanceFactor(n);
+    if (bf == 2) {
+        if (balanceFactor(n->left) >= 0)
+            return rightR(n);
+        else { //balanceFactor(n->left) == -1
+            n->left = leftR(n->left);
+            return rightR(n);
+        }
+    } else if (bf == -2) {
+        if (balanceFactor(n->right) <= 0)
+            return leftR(n);
+        else { //balanceFactor(n->left) == 1
+            n->right = rightR(n->right);
+            return leftR(n);
+        }
+    }
+    return n;
+}

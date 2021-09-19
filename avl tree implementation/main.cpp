@@ -48,6 +48,20 @@ int main() {
                     cout << "Node found at memory location " << t << endl;
                 break;
             }
+            case 3: {
+                // delete operation
+                int v;
+                cout << "Enter the value of the node in BST to be deleted: ";
+                cin >> v;
+                Node *temp = tree.search(tree.root, v);
+                if (temp != nullptr) {
+                    tree.root = tree.deleteNode(tree.root, v);
+                    cout << "Node deleted" << endl;
+                } else {
+                    cout << "Node doesn't exist" << endl;
+                }
+                break;
+            }
             case 4: {
                 // print and traverse operation graphically
                 tree.print(tree.root, SPACE);

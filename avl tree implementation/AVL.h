@@ -25,6 +25,10 @@ public:
     static Node *leftR(Node *);
 
     static Node *rightR(Node *);
+
+    static Node *nMin(Node *);
+
+    Node *deleteNode(Node *, int);
 };
 
 
