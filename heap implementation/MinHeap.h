@@ -15,6 +15,10 @@ public:
     void print() const;
 
     int height() const;
+
+    void insert(int);
+
+    static int parent(int);
 };
 
 

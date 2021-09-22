@@ -24,6 +24,13 @@ int main() {
             case 0:
                 flag = false;
                 break;
+            case 1: {
+                cout << "Enter value: ";
+                int val;
+                cin >> val;
+                m.insert(val);
+            }
+                break;
             case 2: {
                 int val;
                 cout << "Enter value: ";
