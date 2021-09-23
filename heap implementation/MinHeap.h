@@ -27,6 +27,8 @@ public:
     int extractMin();
 
     void heapify(int);
+
+    void deleteKey(int);
 };
 
 

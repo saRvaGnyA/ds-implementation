@@ -89,3 +89,16 @@ void MinHeap::heapify(int i) {
         heapify(smallest);
     }
 }
+
+void MinHeap::deleteKey(int i) {
+    if (i > heap_size - 1) {
+        return;
+    } else if (i == heap_size - 1) {
+        heap_size--;
+        return;
+    } else {
+        arr[i] = arr[heap_size - 1];
+        heap_size--;
+        heapify(i);
+    }
+}

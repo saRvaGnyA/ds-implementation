@@ -38,6 +38,13 @@ int main() {
                 m.linear_search(val);
             }
                 break;
+            case 3: {
+                int index;
+                cout << "Enter index: ";
+                cin >> index;
+                m.deleteKey(index);
+            }
+                break;
             case 4:
                 cout << m.arr[0] << endl;
                 break;
