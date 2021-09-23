@@ -102,3 +102,11 @@ void MinHeap::deleteKey(int i) {
         heapify(i);
     }
 }
+
+void MinHeap::heapSort() {
+    int *sorted = new int[capacity];
+    for (int i{}; i < capacity; ++i) {
+        sorted[i] = extractMin();
+        cout << sorted[i] << "\t";
+    }
+}

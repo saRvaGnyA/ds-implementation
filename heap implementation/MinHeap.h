@@ -29,6 +29,8 @@ public:
     void heapify(int);
 
     void deleteKey(int);
+
+    void heapSort();
 };
 
 

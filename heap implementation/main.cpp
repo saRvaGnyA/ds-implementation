@@ -18,6 +18,7 @@ int main() {
         cout << "6. Height of Heap" << endl;
         cout << "7. Print/Traversal Heap values" << endl;
         cout << "8. Clear Screen" << endl;
+        cout << "9. Heap Sort" << endl;
         cout << "0. Exit Program" << endl;
         cin >> option;
         switch (option) {
@@ -59,6 +60,9 @@ int main() {
                 break;
             case 8:
                 system("CLS");
+                break;
+            case 9:
+                m.heapSort();
                 break;
             default:
                 cout << "Invalid" << endl;
