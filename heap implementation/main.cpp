@@ -37,8 +37,12 @@ int main() {
                 cin >> val;
                 m.linear_search(val);
             }
+                break;
             case 4:
                 cout << m.arr[0] << endl;
+                break;
+            case 5:
+                cout << "Root node extracted is: " << m.extractMin() << endl;
                 break;
             case 6:
                 cout << m.height() << endl;

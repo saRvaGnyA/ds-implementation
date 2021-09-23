@@ -19,6 +19,14 @@ public:
     void insert(int);
 
     static int parent(int);
+
+    static int left_child(int);
+
+    static int right_child(int);
+
+    int extractMin();
+
+    void heapify(int);
 };
 
 

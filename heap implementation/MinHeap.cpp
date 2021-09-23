@@ -49,3 +49,43 @@ void MinHeap::insert(int val) {
 int MinHeap::parent(int i) {
     return (i - 1) / 2;
 }
+
+int MinHeap::left_child(int i) {
+    return (2 * i + 1);
+}
+
+int MinHeap::right_child(int i) {
+    return (2 * i + 2);
+}
+
+int MinHeap::extractMin() {
+    if (heap_size <= 0)
+        return -1;
+    else if (heap_size == 1) {
+        heap_size--;
+        return arr[0];
+    }
+    int root = arr[0];
+    arr[0] = arr[heap_size - 1];
+    heap_size--;
+    heapify(0);
+    return root;
+}
+
+void MinHeap::heapify(int i) {
+    int l = left_child(i);
+    int r = right_child(i);
+    int smallest = i;
+    if (l < heap_size && arr[l] < arr[smallest]) {
+        smallest = l;
+    }
+    if (r < heap_size && arr[r] < arr[smallest]) {
+        smallest = r;
+    }
+    if (smallest != i) {
+        int temp = arr[smallest];
+        arr[smallest] = arr[i];
+        arr[i] = temp;
+        heapify(smallest);
+    }
+}
